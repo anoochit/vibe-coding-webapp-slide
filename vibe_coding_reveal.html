@@ -96,9 +96,9 @@
     .reveal h2 span.accent-yellow { color: var(--google-yellow); }
     .reveal h2 span.accent-green { color: var(--google-green); }
 
-    /* RESTORED: h3 category/section header labels kept at standard size */
+    /* REDUCED: h3 category/section header labels kept compact and elegant */
     .reveal h3 {
-      font-size: 0.8em; /* Restored standard size */
+      font-size: 0.55em; /* Decreased size */
       color: var(--google-gray);
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -337,6 +337,18 @@
               <div><ul>${col1Items}</ul></div>
               <div><ul>${col2Items}</ul></div>
             </div>
+          `;
+          break;
+
+        case "list":
+          const listItems = slide.items.map(item => `<li style="font-size: 0.58em; margin-bottom: 4px;">${item}</li>`).join("");
+          const introP = slide.intro ? `<p style="margin-bottom: 6px; font-size: 0.58em;">${slide.intro}</p>` : "";
+
+          html = `
+            <h3>${slide.section}</h3>
+            <h2 style="margin-bottom: 8px;">${slide.title}</h2>
+            ${introP}
+            <ul style="margin-top: 4px;">${listItems}</ul>
           `;
           break;
 

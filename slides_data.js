@@ -184,6 +184,84 @@ const slidesData = [
     }
   },
   {
+    layout: "list",
+    transition: "slide",
+    section: "Case Study: VibeTree PRD",
+    title: "VibeTree Specifications (Core)",
+    intro: "VibeTree is an aesthetic Linktree clone showcasing dynamic, production-grade Firebase integrations:",
+    items: [
+      "<strong>F-01 Split Builder Panel</strong>: Left-side control dashboard alongside a right-side glassmorphic floating mobile preview simulator updating in real-time.",
+      "<strong>F-02 Dynamic Link Manager</strong>: Add, modify, and delete custom link items. Automatically identifies platform domains to render premium social brand icons.",
+      "<strong>F-03 Firebase Authentication</strong>: Multi-tenant sign-up/login (Email & Google OAuth) supporting custom paths `/dashboard` and public profiles `/:username`.",
+      "<strong>F-04 Database Sync & Setup Checks</strong>: Synchronizes profile state directly to Firestore. Displays a beautiful configuration guide if environmental variables are missing."
+    ]
+  },
+  {
+    layout: "list",
+    transition: "slide",
+    section: "Case Study: VibeTree PRD",
+    title: "VibeTree Specifications (Advanced)",
+    intro: "Advanced features engineering high performance, visual depth, and analytics tracking:",
+    items: [
+      "<strong>F-05 Firebase Storage Uploads</strong>: Handles secure, size-optimized custom avatar image uploads with direct Firebase Storage token resolution.",
+      "<strong>F-06 Drag-and-Drop Reordering</strong>: Lightweight custom HTML5 drag-and-drop link list re-ordering that immediately persists state changes in Firestore.",
+      "<strong>F-07 Custom Premium Themes</strong>: Supports macOS Dark Glassmorphism, Cyberpunk Neon, Minimalist Soft Pastel, and Retro Neo-Brutalism style states.",
+      "<strong>F-08 Dynamic Analytics Dash</strong>: Captures metric click events on active links and presents detailed click timelines using interactive Chart.js widgets.",
+      "<strong>F-09 Firebase App Hosting</strong>: Ready-to-go CI/CD configurations for server-side Next.js hosting via Firebase CLI and App Hosting pipelines."
+    ]
+  },
+  {
+    layout: "list",
+    transition: "slide",
+    section: "Case Study: VibeTree PRD",
+    title: "VibeTree Database & Security Schema",
+    intro: "Enforces strict database structures and secure multi-tenancy configurations for peace of mind:",
+    items: [
+      "<strong>users Collection</strong>: Holds core user document states, custom avatar references, theme choices, and serialized link arrays with active click metrics.",
+      "<strong>usernames Collection</strong>: Performance-tuned reverse-lookup directory ensuring unique lowercase registration handles.",
+      "<strong>analytics Subcollection</strong>: Houses granular time-series daily metrics tracking for Chart.js dashboard components.",
+      "<strong>Firebase Security Rules</strong>: Production-grade access control verifying user authentication tokens for database writes."
+    ]
+  },
+  {
+    layout: "list",
+    transition: "slide",
+    section: "Case Study: VibeTree PRD",
+    title: "VibeTree SEO & Image Optimization",
+    intro: "Ensures discoverability, speed, and standard-compliant resource handling:",
+    items: [
+      "<strong>Dynamic SEO & OG Meta Tags</strong>: Public routes generate metadata server-side via Next.js `generateMetadata`, auto-injecting profile card previews for Slack, X, and Discord.",
+      "<strong>Avatar Upload Limits</strong>: Enforces a strict 2MB maximum upload constraint on the server-side rules and handles client-side MIME checks.",
+      "<strong>Next.js Image Component</strong>: Implements native `<Image />` optimization with automatic WebP conversion, soft blur placeholder styling, and layout shift (CLS) prevention."
+    ]
+  },
+  {
+    layout: "list",
+    transition: "slide",
+    section: "Case Study: VibeTree PRD",
+    title: "Link Validation & UX Safeguards",
+    intro: "Ensures absolute stability, robust error prevention, and premium tactile interaction:",
+    items: [
+      "<strong>Username Regex Constraint</strong>: Strictly checks handles (`/^[a-z0-9_]{3,15}$/`) in real-time to block invalid registrations early.",
+      "<strong>URL Validation Regex</strong>: Automatically intercepts link values, verifying standard protocol anchors and auto-correcting missing `https://` prefixes.",
+      "<strong>Tactile Visual Feedback</strong>: Save actions are disabled during active Firestore sync or Storage uploads, rendering smooth glowing spinner animations.",
+      "<strong>Micro-Blogging Length Limits</strong>: Restricts user bio input length to `160` characters and link titles to `50` characters maximum."
+    ]
+  },
+  {
+    layout: "table",
+    transition: "slide",
+    section: "Case Study: VibeTree PRD",
+    title: "VibeTree Premium Visual Themes",
+    headers: ["Theme Name", "Aesthetic Profile", "Design Language Tokens"],
+    rows: [
+      ["<strong>🌌 Dark Glassmorphism</strong>", "Modern frosted macOS", "Obsidian gradient, rgba translucent card, Cyan/Violet glow, backdrop filter blur."],
+      ["<strong>⚡ Cyberpunk / Neon</strong>", "Retro-futuristic terminal", "Jet black, neon electric pink/cyan borders, JetBrains Mono font, 3D neon glow."],
+      ["<strong>🌸 Minimalist Pastel</strong>", "Earthy lifestyle brand", "Warm Cream, matte white cards, gentle sage outline, serif Playfair Display headers."],
+      ["<strong>🧱 Retro Brutalism</strong>", "Playful zine-style raw layout", "Banana yellow, thick 4px solid black borders, flat hard offsets, blocky display font."]
+    ]
+  },
+  {
     layout: "conclusion",
     transition: "fade",
     badge: "Future Outlook",
