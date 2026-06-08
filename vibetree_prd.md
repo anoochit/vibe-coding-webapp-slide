@@ -247,4 +247,6 @@ The public-facing profile page (`/[username]`) must dynamically compute metadata
 * [ ] **Task 5.2:** Add click metric event tracking. Increment Firestore metric counters when preview links are clicked.
 * [ ] **Task 5.3:** Create interactive dashboard charts tracking click performance using Chart.js.
 * [ ] **Task 5.4:** Prepare deployment configurations and run `firebase deploy`.
+* [ ] **Task 5.4b:** Create local `firestore.rules` and `storage.rules` files matching our security specifications in Part 1.7, and configure `firebase.json` to deploy these rules.
 * [ ] **Task 5.5 [DoD / Verification]:** Click on active public links, then verify click counts increment correctly inside Firestore subcollections. Check that the Chart.js widgets render these clicks accurately over a timeline. Verify the fully deployed app renders correctly on mobile devices.
+
