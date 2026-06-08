@@ -4,7 +4,7 @@ const slidesData = [
   {
     layout: "title",
     transition: "fade",
-    badge: "Google Cloud Slides",
+    badge: "Slides",
     title: "Web Application <br>Development with <br><span style='color: var(--google-blue);'>Vibe</span> <span style='color: var(--google-red);'>Co</span><span style='color: var(--google-yellow);'>di</span><span style='color: var(--google-green);'>ng</span>",
     subtitle: "A Modern Paradigm Shift in Software Engineering",
     presenter: "Anuchit Chalothorn"
