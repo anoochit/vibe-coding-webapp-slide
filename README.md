@@ -32,7 +32,7 @@ To run and preview the presentation deck locally:
 
 ---
 
-## Video
+## 🎞️ Video
 
 1. [Vibetree video](https://www.youtube.com/watch?v=V4QGC1xMBuw)
 
