@@ -32,6 +32,12 @@ To run and preview the presentation deck locally:
 
 ---
 
+## Video
+
+1. [Vibetree video](https://www.youtube.com/watch?v=V4QGC1xMBuw)
+
+---
+
 ## 🛡️ License
 
 This project is licensed under the terms of the MIT License. See the accompanying [**`LICENSE`**](file:///D:/Projects/AIProject/vibe-coding-webapp-slide/LICENSE) file for details.
