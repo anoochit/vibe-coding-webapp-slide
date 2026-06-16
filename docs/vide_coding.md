@@ -14,7 +14,7 @@ Instead of writing code manually, the developer:
 2. Guides autonomous AI agents or code assistants to generate the files, scripts, and structures.
 3. Tests, refines, and iterates in a loop of feedback and adjustment.
 
-As AI researcher and OpenAI co-founder **Andrej Karpathy** put it:
+As AI researcher and OpenAI co-founder **[Andrej Karpathy](https://x.com/karpathy/status/1886192184808149383)** put it:
 
 > *"Fully give in to the vibes, embrace exponentials, and forget that the code even exists."*
 
@@ -50,16 +50,43 @@ In vibe coding, the human takes on the role of a **Tech Lead** or **Product Mana
 
 ---
 
-## 🧰 3. Popular Tools in the Vibe Coding Ecosystem
+## 🧰 3. The 2026 Vibe Coding Ecosystem
 
-A class of "AI-first" developer tools has emerged to power this workflow:
+By 2026, the ecosystem has moved beyond simple "chat-and-code" to **Context-Aware Orchestration**.
 
-| Tool | Focus Area | Strengths |
-| :--- | :--- | :--- |
-| **Cursor** | AI-first Code Editor | Seamless code base indexing, in-line code edits, multi-file edits, and context-aware chat. |
-| **Replit Agent** | Full-Stack Rapid Prototyping | Conversational application creation from idea to instant deployment, setup of database and backend automatically. |
-| **Github Copilot Workspace** | Task-Based Agents | Generates multi-file plans from issues and implements them directly in a pull-request style interface. |
-| **Google Gemini & AI Studio** | Creative/Multimodal Ideation | Excellent context-window capacity for analyzing entire large codebases or assets to suggest features. |
+| Platform | Category | 2026 Capabilities | Examples |
+| :--- | :--- | :--- | :--- |
+| **Agentic IDEs** | Local Orchestration | Autonomous multi-file refactoring, deep codebase indexing, local agent execution. | Cursor, Windsurf |
+| **Agy & Orchestration** | The Brain | Intent, state, and cross-file planning. Compiles natural language "vibes" into SDD. | Agy, Genkit, Vercel AI SDK |
+| **Frontend/App Generators** | UI/UX Prototyping | Fast scaffolding of complex UI components and full application skeletons. | Bolt.new, v0.dev, Replit Agent |
+| **Autonomous Coding Agents** | Atomic Execution | Specialized agents for executing complex, multi-step tasks with verification. | Devin, OpenDevin |
+| **Autonomous Cloud Agents** | Execution & Infra | Instant scaffolding of backends, CI/CD pipelines, and serverless infrastructure. | Firebase App Hosting, Vercel |
+
+---
+
+## 🛠️ 4. Tool Categorization & Usage
+
+Understanding the role of each tool is critical for effective vibe coding.
+
+### Agentic IDEs
+
+These tools serve as the core workspace. They offer deep integration with your local file system, providing context-aware suggestions and the ability to apply changes across multiple files automatically.
+
+### Frontend/App Generators
+
+Ideal for rapid prototyping. They excel at turning high-level design descriptions into functional UI components or entire application skeletons in seconds.
+
+### Orchestration Platforms
+
+The "brain" of the operation. These platforms help manage intent and state over time, breaking down high-level prompts into structured specifications.
+
+### Autonomous Coding Agents
+
+Tools designed to perform complex, multi-step tasks (e.g., bug fixing, library integration) with minimal human intervention, relying on automated testing to ensure correctness.
+
+### Autonomous Cloud Agents
+
+These tools streamline the "last mile" of deployment, bridging the gap between a functional prototype and a production-grade application by automatically configuring infrastructure.
 
 ---
 
