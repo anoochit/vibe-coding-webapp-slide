@@ -50,14 +50,14 @@ In vibe coding, the human takes on the role of a **Tech Lead** or **Product Mana
 
 ---
 
-## 🧰 3. The 2026 Vibe Coding Ecosystem
+## 🧰 3. The Vibe Coding Ecosystem
 
 By 2026, the ecosystem has moved beyond simple "chat-and-code" to **Context-Aware Orchestration**.
 
-| Platform | Category | 2026 Capabilities | Examples |
+| Platform | Category | Capabilities | Examples |
 | :--- | :--- | :--- | :--- |
 | **Agentic IDEs** | Local Orchestration | Autonomous multi-file refactoring, deep codebase indexing, local agent execution. | Cursor, Windsurf |
-| **Agy & Orchestration** | The Brain | Intent, state, and cross-file planning. Compiles natural language "vibes" into SDD. | Agy, Genkit, Vercel AI SDK |
+| **Orchestration** | The Brain | Intent, state, and cross-file planning. Compiles natural language "vibes" into SDD. | Agy, Genkit, Vercel AI SDK |
 | **Frontend/App Generators** | UI/UX Prototyping | Fast scaffolding of complex UI components and full application skeletons. | Bolt.new, v0.dev, Replit Agent |
 | **Autonomous Coding Agents** | Atomic Execution | Specialized agents for executing complex, multi-step tasks with verification. | Devin, OpenDevin |
 | **Autonomous Cloud Agents** | Execution & Infra | Instant scaffolding of backends, CI/CD pipelines, and serverless infrastructure. | Firebase App Hosting, Vercel |
