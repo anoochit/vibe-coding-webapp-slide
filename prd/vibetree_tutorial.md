@@ -31,10 +31,13 @@ gantt
 ---
 
 ## 🚀 Phase 1: Environment Setup, Auth, & Safety Checks (0:00 - 0:35)
-*   **Goal**: Initialize a modern Next.js project with Tailwind CSS, Lucide React, and Firebase. Implement a bulletproof Firebase setup check screen when env keys are missing.
+
+* **Goal**: Initialize a modern Next.js project with Tailwind CSS, Lucide React, and Firebase. Implement a bulletproof Firebase setup check screen when env keys are missing.
 
 ### 💻 Step-by-Step Initialization Commands
+
 Run these commands in your workspace root directory:
+
 ```bash
 # 1. Initialize the Next.js App in non-interactive mode
 npx -y create-next-app@latest vibetree --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"
@@ -45,7 +48,9 @@ npm install firebase lucide-react chart.js react-chartjs-2
 ```
 
 ### 📝 Prompt 1: SDK Setup, Routing & Setup Assistant
+
 Create or edit `src/lib/firebase.ts` and the main entry page with this exact prompt:
+
 ```text
 Setup the Firebase SDK configuration and routing skeleton inside our Next.js App Router project:
 
@@ -61,10 +66,13 @@ Setup the Firebase SDK configuration and routing skeleton inside our Next.js App
 ---
 
 ## 📱 Phase 2: Split-Screen Builder & Live Phone Simulator (0:35 - 1:15)
-*   **Goal**: Design the premium split-panel dashboard containing editing controls on the left and a live-updating floating glassmorphic mobile phone frame on the right.
+
+* **Goal**: Design the premium split-panel dashboard containing editing controls on the left and a live-updating floating glassmorphic mobile phone frame on the right.
 
 ### 📝 Prompt 2: Interactive Split-Panel & Live Preview
+
 Copy and paste this prompt:
+
 ```text
 Build a responsive, highly premium split-panel layout for the `/dashboard` route:
 
@@ -82,10 +90,13 @@ Build a responsive, highly premium split-panel layout for the `/dashboard` route
 ---
 
 ## 🗃️ Phase 3: Cloud Firestore Sync & Theme Engine (1:15 - 2:00)
-*   **Goal**: Persist profiles and unique username reservations in Cloud Firestore, and implement a custom multi-theme visual engine.
+
+* **Goal**: Persist profiles and unique username reservations in Cloud Firestore, and implement a custom multi-theme visual engine.
 
 ### 📝 Prompt 3: Firestore Multi-Tenancy & CSS Theme Engine
+
 Copy and paste this prompt:
+
 ```text
 Implement Firestore real-time synchronization and our custom 4-theme visual engine:
 
@@ -104,10 +115,13 @@ Implement Firestore real-time synchronization and our custom 4-theme visual engi
 ---
 
 ## 📷 Phase 4: Avatar Uploads & Standard Drag-and-Drop (2:00 - 2:35)
-*   **Goal**: Configure Firebase Storage uploads with file verification, and code standard HTML5 draggable lists for link reordering.
+
+* **Goal**: Configure Firebase Storage uploads with file verification, and code standard HTML5 draggable lists for link reordering.
 
 ### 📝 Prompt 4: Storage Upload & HTML5 Reordering
+
 Copy and paste this prompt:
+
 ```text
 Let's add profile avatar uploads and HTML5 list row reordering:
 
@@ -124,10 +138,13 @@ Let's add profile avatar uploads and HTML5 list row reordering:
 ---
 
 ## 📊 Phase 5: Click Telemetry & App Hosting Deployment (2:35 - 3:00)
-*   **Goal**: Integrate granular click tracking inside Firestore, render analytical charts via Chart.js, and configure Firebase App Hosting for live deployment.
+
+* **Goal**: Integrate granular click tracking inside Firestore, render analytical charts via Chart.js, and configure Firebase App Hosting for live deployment.
 
 ### 📝 Prompt 5: Analytical Graphics & App Hosting Configurations
+
 Copy and paste this prompt:
+
 ```text
 Conclude the application with analytic graphs, local security rule files, and live deployment settings:
 
@@ -138,24 +155,30 @@ Conclude the application with analytic graphs, local security rule files, and li
 ```
 
 ### 💻 Live CLI Commands: Deploying Next.js to Firebase App Hosting
+
 Guide the audience through configuring Firebase App Hosting to deploy their server-side Next.js App Router project:
 
-#### 1. Install or Update Firebase CLI:
+#### 1. Install or Update Firebase CLI
+
 ```bash
 npm install -g firebase-tools
 ```
 
-#### 2. Initialize App Hosting Config:
+#### 2. Initialize App Hosting Config
+
 In the project root, run:
+
 ```bash
 firebase login
 firebase init apphosting
 ```
-*   **What to select during `init`:**
-    *   Select your active Firebase Project.
-    *   Choose your preferred hosting region (e.g. `us-central1`).
-    *   Select your GitHub repository containing the **VibeTree** Next.js project.
-    *   Configure automatic builds on every git push (highly recommended for Next.js).
 
-#### 3. Push and Verify:
+* **What to select during `init`:**
+  * Select your active Firebase Project.
+  * Choose your preferred hosting region (e.g. `us-central1`).
+  * Select your GitHub repository containing the **VibeTree** Next.js project.
+  * Configure automatic builds on every git push (highly recommended for Next.js).
+
+#### 3. Push and Verify
+
 Once initialized, push your code to your GitHub main branch. Firebase App Hosting will automatically trigger a cloud-build, compile your Next.js project, optimize server-side renders, and spin up an active hosting domain (e.g., `https://vibetree-app.web.app`) to share live!

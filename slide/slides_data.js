@@ -130,6 +130,19 @@ const slidesData = [
     }
   },
   {
+    layout: "table",
+    transition: "slide",
+    section: "Section 06",
+    title: "Vibe Coding vs. Low-Code / No-Code",
+    headers: ["Feature", "Vibe Coding", "Low-Code / No-Code"],
+    rows: [
+      ["<strong>Interface</strong>", "Natural Language (Chat/Prompts)", "Visual (Drag-and-drop, Menus)"],
+      ["<strong>Output</strong>", "<strong>Real Source Code</strong> (React, etc.)", "Proprietary Metadata (Locked)"],
+      ["<strong>Flexibility</strong>", "<strong>Infinite.</strong> Anything code can do.", "Limited to pre-built components."],
+      ["<strong>Vendor Lock-in</strong>", "<strong>Low.</strong> Own and host anywhere.", "<strong>High.</strong> Total rebuild required."]
+    ]
+  },
+  {
     layout: "grid-2-cards",
     transition: "slide",
     section: "Section 05",
@@ -184,9 +197,89 @@ const slidesData = [
     }
   },
   {
+    layout: "grid-2-cards",
+    transition: "slide",
+    section: "Section 10",
+    title: "Spec-Driven Development (SDD)",
+    intro: "As projects scale, loose prompting hits the 'Three-Month Wall'. SDD evolves the vibe into architectural discipline:",
+    card1: {
+      title: "The Core Philosophy",
+      badge: "🛡️ Reliability",
+      themeColor: "var(--google-blue)",
+      badgeClass: "badge-blue",
+      items: [
+        "AI as a <strong>literal-minded</strong> pair programmer.",
+        "Unambiguous boundaries and formal intent definition.",
+        "Focus shifts from 'vibing' to <strong>managing intent</strong>."
+      ]
+    },
+    card2: {
+      title: "Three Levels of Maturity",
+      badge: "📈 Scale",
+      themeColor: "var(--google-yellow)",
+      badgeClass: "badge-yellow",
+      items: [
+        "<strong>Level 1: Spec-First</strong>: Use specs for complex features.",
+        "<strong>Level 2: Spec-Anchored</strong>: Version-controlled specs.",
+        "<strong>Level 3: Spec-as-Source</strong>: Human edits spec, AI compiles code."
+      ]
+    }
+  },
+  {
+    layout: "grid-2-cards",
+    transition: "slide",
+    section: "Section 10",
+    title: "The SDD Lifecycle &bull; Four Pillars",
+    card1: {
+      title: "1. Specify & 2. Plan",
+      badge: "📝 Intent",
+      themeColor: "var(--google-red)",
+      badgeClass: "badge-red",
+      items: [
+        "<strong>Specify</strong>: Describe 'what' and 'why' in natural language.",
+        "<strong>Plan</strong>: Provide tech constraints and architectural 'how'."
+      ]
+    },
+    card2: {
+      title: "3. Taskify & 4. Implement",
+      badge: "⚡ Action",
+      themeColor: "var(--google-green)",
+      badgeClass: "badge-green",
+      items: [
+        "<strong>Taskify</strong>: Break plans into atomic, reviewable units.",
+        "<strong>Implement</strong>: AI execution of tasks with verified code and tests."
+      ]
+    }
+  },
+  {
+    layout: "table",
+    transition: "slide",
+    section: "Section 11",
+    title: "The AI-Native Developer Stack (2026)",
+    headers: ["Layer", "Component", "2026 Standard"],
+    rows: [
+      ["<strong>Orchestration</strong>", "The Brain", "Context-aware tools managing cross-file state."],
+      ["<strong>Execution</strong>", "The Hands", "Specialized Sub-Agents for atomic tasks."],
+      ["<strong>Persistence</strong>", "The Memory", "Context-anchored docs acting as long-term memory."],
+      ["<strong>Verification</strong>", "The Auditor", "Automated 'Slop Detectors' running on every generation."]
+    ]
+  },
+  {
     layout: "list",
     transition: "slide",
-    section: "Case Study: VibeTree PRD",
+    section: "Section 12",
+    title: "From 'Chatting' to 'Orchestration'",
+    intro: "Pasting code into chat is over. Modern 2026 workflows rely on Context-Aware Orchestration:",
+    items: [
+      "<strong>Context-First Development</strong>: Tools securely index your entire environment, documentation, and API keys.",
+      "<strong>Agent-in-the-Loop</strong>: Delegating to specialized Sub-Agents (e.g., `firebase-expert`) rather than raw prompting.",
+      "<strong>Zero-Shot Scaffolding</strong>: Automated configuration of cloud backends and CI/CD pipelines in seconds."
+    ]
+  },
+  {
+    layout: "list",
+    transition: "slide",
+    section: "Case Study: VibeTree",
     title: "VibeTree Specifications (Core)",
     intro: "VibeTree is an aesthetic Linktree clone showcasing dynamic, production-grade Firebase integrations:",
     items: [
@@ -199,7 +292,7 @@ const slidesData = [
   {
     layout: "list",
     transition: "slide",
-    section: "Case Study: VibeTree PRD",
+    section: "Case Study: VibeTree",
     title: "VibeTree Specifications (Advanced)",
     intro: "Advanced features engineering high performance, visual depth, and analytics tracking:",
     items: [
@@ -213,7 +306,7 @@ const slidesData = [
   {
     layout: "list",
     transition: "slide",
-    section: "Case Study: VibeTree PRD",
+    section: "Case Study: VibeTree",
     title: "VibeTree Database & Security Schema",
     intro: "Enforces strict database structures and secure multi-tenancy configurations for peace of mind:",
     items: [
@@ -226,7 +319,7 @@ const slidesData = [
   {
     layout: "list",
     transition: "slide",
-    section: "Case Study: VibeTree PRD",
+    section: "Case Study: VibeTree",
     title: "VibeTree SEO & Image Optimization",
     intro: "Ensures discoverability, speed, and standard-compliant resource handling:",
     items: [
@@ -238,7 +331,7 @@ const slidesData = [
   {
     layout: "list",
     transition: "slide",
-    section: "Case Study: VibeTree PRD",
+    section: "Case Study: VibeTree",
     title: "Link Validation & UX Safeguards",
     intro: "Ensures absolute stability, robust error prevention, and premium tactile interaction:",
     items: [
@@ -251,7 +344,7 @@ const slidesData = [
   {
     layout: "table",
     transition: "slide",
-    section: "Case Study: VibeTree PRD",
+    section: "Case Study: VibeTree",
     title: "VibeTree Premium Visual Themes",
     headers: ["Theme Name", "Aesthetic Profile", "Design Language Tokens"],
     rows: [

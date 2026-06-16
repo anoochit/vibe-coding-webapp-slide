@@ -11,33 +11,3 @@ Welcome to the **Vibe Coding Presentation & VibeTree Specification** workspace! 
 *   **[`vibetree_prd.md`](file:///D:/Projects/AIProject/vibe-coding-webapp-slide/vibetree_prd.md)**: A production-grade Product Requirement Document outlining the architectural guidelines, data schemas, security rules, and user interaction profiles of **VibeTree**.
 *   **[`vibetree_tutorial.md`](file:///D:/Projects/AIProject/vibe-coding-webapp-slide/vibetree_tutorial.md)**: A step-by-step developer tutorial outlining setup checks, auth integrations, real-time database syncing, and Firebase App Hosting deployments.
 *   **[`research.md`](file:///D:/Projects/AIProject/vibe-coding-webapp-slide/research.md)**: Raw research and concepts laying out the conceptual, architectural, and visual foundations of the Vibe Coding era.
-
----
-
-## ⚡ Quick Start: Viewing the Presentation
-
-To run and preview the presentation deck locally:
-
-1.  **Open the HTML File Directly**:
-    Simply double-click [`vibe_coding_reveal.html`](file:///D:/Projects/AIProject/vibe-coding-webapp-slide/vibe_coding_reveal.html) to open the interactive slides directly in your default browser.
-    
-2.  **Using Live Server (Recommended)**:
-    If you use VS Code, right-click [`vibe_coding_reveal.html`](file:///D:/Projects/AIProject/vibe-coding-webapp-slide/vibe_coding_reveal.html) and select **Open with Live Server** to support hot reloading when making changes to slide data.
-
-### Presentation Controls
-*   `Space` or `Right Arrow`: Next Slide
-*   `Left Arrow`: Previous Slide
-*   `F`: Toggle Fullscreen mode
-*   `O`: Toggle Slide Overview map
-
----
-
-## 🎞️ Video
-
-1. [Vibetree video](https://www.youtube.com/watch?v=V4QGC1xMBuw)
-
----
-
-## 🛡️ License
-
-This project is licensed under the terms of the MIT License. See the accompanying [**`LICENSE`**](file:///D:/Projects/AIProject/vibe-coding-webapp-slide/LICENSE) file for details.

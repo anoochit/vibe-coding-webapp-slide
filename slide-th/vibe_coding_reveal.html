@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Web Application Development with Vibe Coding</title>
+  <meta name="description" content="A premium Google Theme reveal.js slide deck explaining Vibe Coding.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Reveal.js Core Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+  <!-- Clean minimalist theme as foundation -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/simple.min.css">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Custom Google Brand Theme Styles -->
+  <style>
+    :root {
+      --r-background-color: #ffffff;
+      --r-main-font: 'Plus Jakarta Sans', sans-serif;
+      --r-heading-font: 'Plus Jakarta Sans', sans-serif;
+      --r-main-color: #202124;
+      --r-heading-color: #202124;
+      
+      /* Google Brand Colors */
+      --google-blue: #1a73e8;
+      --google-red: #ea4335;
+      --google-yellow: #fbbc05;
+      --google-green: #34a853;
+      --google-gray: #5f6368;
+      --google-light-gray: #f8f9fa;
+    }
+
+    body {
+      background-color: var(--r-background-color);
+      overflow: hidden;
+    }
+
+    .reveal {
+      font-family: var(--r-main-font);
+      color: var(--r-main-color);
+    }
+
+    /* Elegant Top Google Brand bar */
+    .google-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      display: flex;
+      z-index: 99;
+    }
+    .google-bar div {
+      flex: 1;
+    }
+    .bar-blue { background-color: var(--google-blue); }
+    .bar-red { background-color: var(--google-red); }
+    .bar-yellow { background-color: var(--google-yellow); }
+    .bar-green { background-color: var(--google-green); }
+
+    /* Premium Google Slide Structure */
+    .reveal .slides section {
+      text-align: left;
+      padding: 15px 25px; /* Reduced padding to prevent overflow */
+      box-sizing: border-box;
+      overflow: hidden; /* Prevent text overflow scrolls inside slides */
+    }
+
+    /* Headings (Reduced Slide Titles and Subheadings Only) */
+    .reveal h1, .reveal h2, .reveal h3 {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+
+    .reveal h1 {
+      font-size: 1.75em; /* Reduced size */
+      line-height: 1.1;
+      margin-top: 5px; /* Reduced margin */
+      margin-bottom: 8px; /* Reduced margin */
+    }
+
+    .reveal h2 {
+      font-size: 1.15em; /* Reduced size */
+      color: var(--google-blue);
+      border-bottom: 2px solid #e8eaed;
+      padding-bottom: 4px;
+      margin-bottom: 10px; /* Reduced margin */
+    }
+
+    .reveal h2 span.accent-red { color: var(--google-red); }
+    .reveal h2 span.accent-yellow { color: var(--google-yellow); }
+    .reveal h2 span.accent-green { color: var(--google-green); }
+
+    /* REDUCED: h3 category/section header labels kept compact and elegant */
+    .reveal h3 {
+      font-size: 0.55em; /* Decreased size */
+      color: var(--google-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+
+    /* REDUCED: Body copy and list item sizes for maximum overflow safety */
+    .reveal p, .reveal li {
+      font-size: 0.65em; 
+      line-height: 1.45;
+      color: #3c4043;
+      margin: 0;
+    }
+
+    .reveal p {
+      margin-bottom: 8px; /* Reduced margin */
+    }
+
+    .reveal ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    .reveal li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 4px; /* Reduced spacing between bullets */
+    }
+
+    .reveal li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--google-blue);
+      font-size: 1.2em;
+      line-height: 1;
+      top: -2px;
+    }
+
+    /* Custom Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px; /* Reduced gap */
+    }
+
+    .card {
+      background: var(--google-light-gray);
+      border-radius: 8px;
+      padding: 10px 14px; /* Reduced padding */
+      box-shadow: 0 1px 2px rgba(60,64,67,0.08);
+      border: 1px solid #dadce0;
+    }
+
+    .card-title {
+      font-weight: 700;
+      font-size: 0.68em; /* Reduced size */
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Colored Bullets */
+    .card-red li::before { color: var(--google-red); }
+    .card-green li::before { color: var(--google-green); }
+    .card-yellow li::before { color: var(--google-yellow); }
+
+    /* Quote Slide styling */
+    .quote-container {
+      border-left: 4px solid var(--google-blue);
+      padding: 8px 18px;
+      margin: 15px 0;
+      background: #f8f9fa;
+      border-radius: 0 8px 8px 0;
+    }
+    .quote-text {
+      font-size: 0.85em; /* Reduced size */
+      font-style: italic;
+      line-height: 1.3;
+      color: #202124;
+      margin: 0;
+    }
+    .quote-author {
+      font-size: 0.65em; /* Reduced size */
+      color: var(--google-gray);
+      margin-top: 8px;
+      font-weight: 600;
+    }
+
+    /* Table styles matching Google Sheets minimalist aesthetics */
+    table.google-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.52em; /* Decreased size */
+    }
+    table.google-table th, table.google-table td {
+      padding: 6px 8px; /* Tighter cell padding */
+      border-bottom: 1px solid #dadce0;
+      text-align: left;
+    }
+    table.google-table th {
+      font-weight: 600;
+      background-color: var(--google-light-gray);
+      color: var(--google-gray);
+      border-top: 1px solid #dadce0;
+    }
+    table.google-table td strong {
+      color: var(--google-blue);
+    }
+
+    /* Buttons / Badges */
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.52em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .badge-blue { background: #e8f0fe; color: var(--google-blue); }
+    .badge-red { background: #fce8e6; color: var(--google-red); }
+    .badge-green { background: #e6f4ea; color: var(--google-green); }
+    .badge-yellow { background: #fef7e0; color: #b06000; }
+  </style>
+</head>
+<body>
+
+  <!-- Google Bar Header decoration -->
+  <div class="google-bar">
+    <div class="bar-blue"></div>
+    <div class="bar-red"></div>
+    <div class="bar-yellow"></div>
+    <div class="bar-green"></div>
+  </div>
+
+  <div class="reveal">
+    <div class="slides" id="slides-container">
+      <!-- Slides will be injected here dynamically by JavaScript -->
+    </div>
+  </div>
+
+  <!-- Slides Data -->
+  <script src="./slides_data.js"></script>
+
+  <!-- Reveal.js JS dependency CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+  
+  <script>
+    // Slide Rendering Engine - Renders JSON slidesData to Reveal.js DOM
+    const container = document.getElementById("slides-container");
+
+    window.slidesData.forEach(slide => {
+      const section = document.createElement("section");
+      section.setAttribute("data-transition", slide.transition || "slide");
+
+      let html = "";
+
+      switch(slide.layout) {
+        case "title":
+          html = `
+            <br>
+            <span class="badge badge-blue">${slide.badge}</span>
+            <h1 style="font-size: 2.1em; font-weight: 800; margin-top: 15px; margin-bottom: 12px;">${slide.title}</h1>
+            <p style="font-size: 0.85em; color: var(--google-gray); margin-top: 5px; font-weight: 500; margin-bottom: 18px;">${slide.subtitle}</p>
+            <p style="font-size: 0.65em; color: var(--google-gray);"><strong>Presenter</strong>: ${slide.presenter}</p>
+          `;
+          break;
+
+        case "quote":
+          html = `
+            <h3>${slide.section}</h3>
+            <h2>${slide.title}</h2>
+            <p style="margin-bottom: 12px;">${slide.intro}</p>
+            <div class="quote-container">
+              <p class="quote-text">"${slide.quote}"</p>
+              <p class="quote-author">— ${slide.author}</p>
+            </div>
+          `;
+          break;
+
+        case "grid-2-cards":
+          const introHtml = slide.intro ? `<p style="margin-bottom: 12px;">${slide.intro}</p>` : "";
+          const list1 = slide.card1.items.map(item => `<li>${item}</li>`).join("");
+          const list2 = slide.card2.items.map(item => `<li>${item}</li>`).join("");
+
+          html = `
+            <h3>${slide.section}</h3>
+            <h2>${slide.title}</h2>
+            ${introHtml}
+            <div class="grid-2" style="margin-top: 8px;">
+              <div class="card ${slide.card1.badgeClass === 'badge-red' ? 'card-red' : slide.card1.badgeClass === 'badge-green' ? 'card-green' : 'card-blue'}">
+                <div class="card-title" style="color: ${slide.card1.themeColor};">
+                  <span class="badge ${slide.card1.badgeClass}">${slide.card1.badge}</span> ${slide.card1.title}
+                </div>
+                <ul>${list1}</ul>
+              </div>
+              <div class="card ${slide.card2.badgeClass === 'badge-red' ? 'card-red' : slide.card2.badgeClass === 'badge-green' ? 'card-green' : slide.card2.badgeClass === 'badge-blue' ? 'card-blue' : 'card-yellow'}">
+                <div class="card-title" style="color: ${slide.card2.themeColor};">
+                  <span class="badge ${slide.card2.badgeClass}">${slide.card2.badge}</span> ${slide.card2.title}
+                </div>
+                <ul>${list2}</ul>
+              </div>
+            </div>
+          `;
+          break;
+
+        case "table":
+          const ths = slide.headers.map(h => `<th>${h}</th>`).join("");
+          const trs = slide.rows.map(row => {
+            const tds = row.map(col => `<td>${col}</td>`).join("");
+            return `<tr>${tds}</tr>`;
+          }).join("");
+
+          html = `
+            <h3>${slide.section}</h3>
+            <h2>${slide.title}</h2>
+            <table class="google-table">
+              <thead><tr>${ths}</tr></thead>
+              <tbody>${trs}</tbody>
+            </table>
+          `;
+          break;
+
+        case "grid-2-columns":
+          const col1Items = slide.column1.map(item => `<li>${item}</li>`).join("");
+          const col2Items = slide.column2.map(item => `<li>${item}</li>`).join("");
+
+          html = `
+            <h3>${slide.section}</h3>
+            <h2>${slide.title}</h2>
+            <div class="grid-2" style="margin-top: 12px;">
+              <div><ul>${col1Items}</ul></div>
+              <div><ul>${col2Items}</ul></div>
+            </div>
+          `;
+          break;
+
+        case "list":
+          const listItems = slide.items.map(item => `<li style="font-size: 0.58em; margin-bottom: 4px;">${item}</li>`).join("");
+          const introP = slide.intro ? `<p style="margin-bottom: 6px; font-size: 0.58em;">${slide.intro}</p>` : "";
+
+          html = `
+            <h3>${slide.section}</h3>
+            <h2 style="margin-bottom: 8px;">${slide.title}</h2>
+            ${introP}
+            <ul style="margin-top: 4px;">${listItems}</ul>
+          `;
+          break;
+
+        case "conclusion":
+          html = `
+            <br>
+            <span class="badge badge-green">${slide.badge}</span>
+            <h1 style="font-weight: 800; font-size: 2.1em; margin-top: 15px; margin-bottom: 12px;">${slide.title}</h1>
+            <p style="font-size: 0.9em; color: var(--google-gray); margin-top: 5px; margin-bottom: 15px;">${slide.subtitle}</p>
+            <h2 style="font-size: 1.3em; border: none; color: var(--google-blue); font-family: 'Space Grotesk', sans-serif; margin: 0;">${slide.thankYou}</h2>
+          `;
+          break;
+      }
+
+      section.innerHTML = html;
+      container.appendChild(section);
+    });
+
+    // Initialize reveal.js with slide parameters optimized for widescreen 16:9 to completely eliminate any overflow issues
+    Reveal.initialize({
+      hash: true,
+      center: true,
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+      width: 960,
+      height: 540, // Standard 16:9 aspect ratio prevents viewport vertical bleeding
+      margin: 0.05,
+      minScale: 0.2,
+      maxScale: 2.0,
+      plugins: []
+    });
+  </script>
+</body>
+</html>
