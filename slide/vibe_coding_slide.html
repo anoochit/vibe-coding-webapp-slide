@@ -280,11 +280,6 @@
     /* Slide specific styles */
     .title-slide {
       text-align: center !important;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
     }
 
     /* Step flow badge */
@@ -337,7 +332,70 @@
         </div>
       </section>
 
-      <!-- SLIDE 2: DOWNLOAD PRESENTATION MATERIAL -->
+      <!-- SLIDE 2: SPEAKER PROFILE -->
+      <section data-transition="slide-in fade-out">
+        <h2>👤 Speaker Profile</h2>
+        <p style="font-size: 1.1em; margin-bottom: 1.5rem; color: var(--text-muted);">
+          Meet the creator behind this presentation.
+        </p>
+
+        <div class="grid-2">
+          <!-- Left Column: Personal Brand -->
+          <div class="card" style="border-top: 6px solid var(--google-blue); display: flex; flex-direction: column; justify-content: space-between; text-align: center; padding: 2.2rem 1.8rem; margin: 0;">
+            <div>
+              <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 4px solid #ffffff; box-shadow: var(--shadow-md); margin: 0 auto 20px; background: rgba(26, 115, 232, 0.05); display: flex; align-items: center; justify-content: center;">
+                <img src="avatar.jpg" alt="Anuchit Chalothorn" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+              </div>
+              <h3 style="font-size: 1.8em; margin: 0 0 10px; color: #1f1f1f; font-family: var(--r-heading-font);">Anuchit Chalothorn</h3>
+              <div class="badge" style="margin-bottom: 15px;">Entrepreneur</div>
+              <p style="font-size: 1.15em; color: var(--text-muted); margin: 10px 0;">
+                <i class="fa-solid fa-house-user" style="color: var(--google-blue); margin-right: 8px;"></i> Stay at home
+              </p>
+            </div>
+            
+            <div style="background: rgba(234, 67, 53, 0.05); border: 1px dashed var(--google-red); border-radius: 16px; padding: 15px; margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 15px;">
+              <i class="fa-solid fa-cat fa-bounce" style="font-size: 2.2em; color: var(--google-red);"></i>
+              <div style="text-align: left;">
+                <div style="font-weight: 700; color: #1f1f1f; font-size: 1.1em;">Cat Lover</div>
+                <div style="font-size: 0.9em; color: var(--text-muted);">Proudly feeding 11 cats</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Professional Experience -->
+          <div style="display: flex; flex-direction: column; gap: 15px;">
+            <div class="card" style="margin: 0; border-left: 6px solid #0175c2; display: flex; align-items: center; gap: 20px; padding: 1.2rem;">
+              <div style="font-size: 2em; color: #0175c2; width: 45px; text-align: center;"><i class="fa-brands fa-square-youtube"></i></div>
+              <div>
+                <div style="font-weight: 700; font-size: 1.15em; color: #1f1f1f;">Content Creator</div>
+                <div style="font-size: 0.95em; color: var(--text-muted);">
+                  Creator at <strong style="color: #0175c2;">"Dart แบบ Dart Dart"</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="margin: 0; border-left: 6px solid var(--google-green); display: flex; align-items: center; gap: 20px; padding: 1.2rem;">
+              <div style="font-size: 2em; color: var(--google-green); width: 45px; text-align: center;"><i class="fa-solid fa-book-open"></i></div>
+              <div>
+                <div style="font-weight: 700; font-size: 1.15em; color: #1f1f1f;">Tech Book Writer</div>
+                <div style="font-size: 0.95em; color: var(--text-muted);">Authoring comprehensive technical resources</div>
+              </div>
+            </div>
+
+            <div class="card" style="margin: 0; border-left: 6px solid var(--google-yellow); display: flex; align-items: center; gap: 20px; padding: 1.2rem;">
+              <div style="font-size: 2em; color: #b06000; width: 45px; text-align: center;"><i class="fa-solid fa-handshake-angle"></i></div>
+              <div>
+                <div style="font-weight: 700; font-size: 1.15em; color: #1f1f1f;">Technology Consultant</div>
+                <div style="font-size: 0.95em; color: var(--text-muted);">
+                  Consultant at <strong style="color: #b06000;">tech company @ Deajon</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: DOWNLOAD PRESENTATION MATERIAL -->
       <section data-transition="slide-in fade-out">
         <h2>📥 Presentation Materials</h2>
         <p style="font-size: 1.1em; margin-bottom: 1.5rem; color: var(--text-muted);">
