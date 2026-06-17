@@ -86,7 +86,7 @@
     }
 
     .reveal p {
-      font-size: 1.1em; /* Bigger body text */
+      font-size: 1.55em; /* Bigger body text */
       line-height: 1.5;
     }
 
@@ -331,6 +331,7 @@
             A paradigm shift from manual implementation to high-level orchestration, direction, and curation.
           </p>
         </div>
+         
         <div style="margin-top: 50px; font-size: 0.8em; color: var(--google-blue); font-weight: 500;">
           Use Space / Arrows to navigate <i class="fa-solid fa-arrow-right"></i>
         </div>
@@ -847,6 +848,9 @@
       transition: 'slide', // none/fade/slide/convex/concave/zoom
       transitionSpeed: 'normal',
       backgroundTransition: 'fade',
+
+      // Add this line to let standard browser layout & zoom take over:
+      // disableLayout: true,
       
       // Auto-animate configurations
       autoAnimateEasing: 'ease',
