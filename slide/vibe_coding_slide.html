@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Vibe Coding - Web Application Development (Google Theme)</title>
+  
+  <!-- SEO Best Practices -->
+  <meta name="description" content="Explore the paradigm shift of Vibe Coding and Spec-Driven Development in modern web application engineering.">
+  <meta name="author" content="Antigravity AI">
+
+  <!-- Reveal.js Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+  
+  <!-- Google Fonts: Product Sans lookalike 'Product Sans' is proprietary, so we use 'Google Sans' inspired 'Outfit' and 'Inter' -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Google Light/Material Design 3 Theme with Bigger Fonts -->
+  <style>
+    :root {
+      --r-background-color: #f8f9fa; /* Google off-white background */
+      --r-main-font: 'Inter', sans-serif;
+      --r-heading-font: 'Outfit', sans-serif;
+      --r-heading-color: #1f1f1f; /* Google dark grey */
+      --r-main-color: #3c4043; /* Google secondary text grey */
+      
+      /* Google Brand Colors */
+      --google-blue: #1a73e8;
+      --google-red: #ea4335;
+      --google-yellow: #f9ab00;
+      --google-green: #137333;
+      
+      /* Surfaces and Borders */
+      --surface-card: #ffffff;
+      --border-color: #dadce0;
+      --text-muted: #5f6368;
+      
+      /* Rich Shadows and Glows */
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-premium: 0 20px 25px -5px rgba(26, 115, 232, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    body {
+      background: radial-gradient(circle at 10% 20%, rgba(26, 115, 232, 0.03) 0%, rgba(248, 249, 250, 1) 90%);
+      font-family: var(--r-main-font);
+      color: var(--r-main-color);
+    }
+
+    .reveal {
+      font-family: var(--r-main-font);
+      color: var(--r-main-color);
+    }
+
+    /* Headings styling - MUCH BIGGER */
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+      font-family: var(--r-heading-font);
+      color: var(--r-heading-color);
+      font-weight: 700;
+      text-transform: none;
+      letter-spacing: -0.01em;
+    }
+
+    .reveal h1 {
+      font-size: 3.6em; /* Increased from 2.8em */
+      line-height: 1.15;
+    }
+
+    .reveal h2 {
+      font-size: 2.2em; /* Increased from 1.8em */
+      margin-bottom: 0.8em;
+      border-bottom: 3px solid var(--google-blue);
+      display: inline-block;
+      padding-bottom: 8px;
+    }
+
+    .reveal h3 {
+      font-size: 1.6em; /* Increased from 1.3em */
+      color: var(--google-blue);
+    }
+
+    .reveal p {
+      font-size: 1.1em; /* Bigger body text */
+      line-height: 1.5;
+    }
+
+    /* Slides general container */
+    .reveal .slides section {
+      text-align: left;
+      padding: 30px 50px;
+      box-sizing: border-box;
+    }
+
+    /* Premium Google Material Style Cards */
+    .card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 1.8rem;
+      margin: 0.8rem 0;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card:hover {
+      border-color: var(--google-blue);
+      box-shadow: var(--shadow-premium);
+      transform: translateY(-5px);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 12px;
+      color: var(--google-blue);
+      font-weight: 600;
+      font-size: 1.25em; /* Bigger */
+    }
+
+    .card-header i {
+      font-size: 1.3em;
+    }
+
+    /* Google Brand Dots Indicator */
+    .google-dots {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 25px;
+    }
+    .google-dots span {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+    }
+    .dot-blue { background-color: var(--google-blue); }
+    .dot-red { background-color: var(--google-red); }
+    .dot-yellow { background-color: var(--google-yellow); }
+    .dot-green { background-color: var(--google-green); }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    /* Custom Table Styling - Google Style */
+    table.custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9em; /* Bigger */
+      margin-top: 20px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+    }
+
+    table.custom-table th {
+      background-color: #f1f3f4;
+      color: #1f1f1f;
+      font-weight: 600;
+      padding: 16px 20px;
+      border-bottom: 2px solid var(--border-color);
+      text-align: left;
+    }
+
+    table.custom-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-color);
+      background-color: #ffffff;
+    }
+
+    table.custom-table tr:hover td {
+      background-color: rgba(26, 115, 232, 0.04);
+    }
+
+    table.custom-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Code Block Custom Styling */
+    .reveal pre {
+      background: #202124; /* Dark slate for Google style code block */
+      border: 1px solid #3c4043;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: var(--shadow-lg);
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .reveal code {
+      font-family: 'JetBrains Mono', monospace;
+      color: #f1f3f4;
+      font-size: 0.95em; /* Bigger */
+    }
+
+    /* Elegant blockquotes */
+    blockquote {
+      background: rgba(26, 115, 232, 0.04);
+      border-left: 6px solid var(--google-blue) !important;
+      padding: 20px 30px !important;
+      margin: 25px 0 !important;
+      border-radius: 0 16px 16px 0;
+      box-shadow: var(--shadow-md) !important;
+      font-style: italic;
+      color: #1f1f1f;
+      font-size: 1.15em !important; /* Bigger */
+    }
+
+    blockquote cite {
+      display: block;
+      margin-top: 12px;
+      font-weight: 600;
+      font-style: normal;
+      color: var(--google-blue);
+      font-size: 0.85em;
+    }
+
+    /* Highlight list style */
+    .reveal ul.custom-list {
+      list-style-type: none;
+      margin-left: 0;
+    }
+
+    .reveal ul.custom-list li {
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 16px;
+      font-size: 1.05em; /* Bigger */
+    }
+
+    .reveal ul.custom-list li::before {
+      content: "\f058"; /* fa-check-circle */
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--google-green);
+    }
+
+    .reveal ul.custom-list li.warn::before {
+      content: "\f071"; /* fa-exclamation-triangle */
+      color: var(--google-red);
+    }
+
+    /* Progress and controls */
+    .reveal .progress {
+      background: #dadce0;
+      height: 5px;
+    }
+    .reveal .progress span {
+      background: var(--google-blue);
+    }
+    .reveal .controls button {
+      color: var(--google-blue) !important;
+    }
+
+    /* Slide specific styles */
+    .title-slide {
+      text-align: center !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    /* Step flow badge */
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.8em;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: rgba(26, 115, 232, 0.1);
+      border: 1px solid rgba(26, 115, 232, 0.2);
+      color: var(--google-blue);
+    }
+
+    .badge-gold {
+      background: rgba(249, 171, 0, 0.1);
+      border: 1px solid rgba(249, 171, 0, 0.2);
+      color: #b06000;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDE 1: TITLE SLIDE (GOOGLE THEME) -->
+      <section class="title-slide" data-transition="zoom">
+        <div class="google-dots">
+          <span class="dot-blue"></span>
+          <span class="dot-red"></span>
+          <span class="dot-yellow"></span>
+          <span class="dot-green"></span>
+        </div>
+        <h1 style="font-size: 3.2em; margin-bottom: 15px; color: #1f1f1f; font-weight: 800;">
+          <span style="color: var(--google-blue);">Vibe</span> 
+          <span style="color: var(--google-red);">Coding</span>
+        </h1>
+        <p style="font-size: 1.4em; font-weight: 400; margin-bottom: 35px; color: var(--text-muted);">
+          Web Application Development in the AI-Native Era
+        </p>
+        <div class="card" style="max-width: 700px; margin: 0 auto; padding: 1.5rem; border-color: var(--border-color); background: #ffffff;">
+          <p style="font-size: 0.95em; margin: 0; color: var(--text-muted); line-height: 1.6;">
+            A paradigm shift from manual implementation to high-level orchestration, direction, and curation.
+          </p>
+        </div>
+        <div style="margin-top: 50px; font-size: 0.8em; color: var(--google-blue); font-weight: 500;">
+          Use Space / Arrows to navigate <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: DOWNLOAD PRESENTATION MATERIAL -->
+      <section data-transition="slide-in fade-out">
+        <h2>📥 Presentation Materials</h2>
+        <p style="font-size: 1.1em; margin-bottom: 1.5rem; color: var(--text-muted);">
+          Scan the QR code below to download the slides, code, worksheets, and resources.
+        </p>
+
+        <div class="grid-2">
+          <!-- Left Column: What's included -->
+          <div class="card" style="border-left: 6px solid var(--google-blue); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-weight: 700; color: var(--google-blue); font-size: 1.25em; margin-bottom: 15px;">
+                <i class="fa-solid fa-folder-open"></i> What's Included:
+              </div>
+              <ul class="custom-list" style="margin-top: 10px;">
+                <li><strong>Presentation Deck:</strong> Full slide in HTML format.</li>
+                <li><strong>Source Code:</strong> Complete repository with example spec.</li>
+                <li><strong>Guidebook:</strong> Hands-on tutorial.</li>
+                <li><strong>Resource Kit:</strong> Agent Skills.</li>
+              </ul>
+            </div>
+            <div style="background: rgba(26, 115, 232, 0.05); border: 1px dashed var(--google-blue); border-radius: 12px; padding: 12px 18px; margin-top: 15px;">
+              <p style="font-size: 0.85em; margin: 0; color: #1a73e8; line-height: 1.4;">
+                <i class="fa-solid fa-circle-info" style="margin-right: 5px;"></i>
+                Keep your camera pointed at the QR code until the link pops up. Works on all modern smartphones.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column: QR Code Frame -->
+          <div class="card" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #ffffff; border-color: var(--border-color);">
+            <div style="position: relative; padding: 15px; border-radius: 20px; background: #ffffff; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); width: 220px; height: 220px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+              <img src="mtmp2xee-qr.png" alt="Scan to Download Material" style="max-width: 100%; max-height: 100%; border-radius: 10px; display: block; margin: 0;">
+            </div>
+            <div style="margin-top: 15px; font-weight: 600; color: var(--google-blue); font-size: 1em; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-qrcode fa-bounce" style="color: var(--google-blue);"></i> Scan Me to Download
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: WHAT IS VIBE CODING -->
+      <section data-transition="slide-in fade-out">
+        <h2>🚀 What is "Vibe Coding"?</h2>
+        <p style="font-size: 1.15em; margin-bottom: 2rem;">
+          A software development workflow where the developer shifts from being a line-by-line coder to a <strong>creative director</strong> or <strong>software architect</strong>.
+        </p>
+        
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-header" style="color: var(--google-blue);"><i class="fa-solid fa-comments"></i> 1. Describe</div>
+            <p style="font-size: 0.9em; margin: 0; color: var(--text-muted);">
+              Detail the intended system, features, or design in natural language.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-header" style="color: var(--google-red);"><i class="fa-solid fa-robot"></i> 2. Guide</div>
+            <p style="font-size: 0.9em; margin: 0; color: var(--text-muted);">
+              Direct autonomous AI agents to generate code, databases, and assets.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-header" style="color: var(--google-green);"><i class="fa-solid fa-rotate"></i> 3. Iterate</div>
+            <p style="font-size: 0.9em; margin: 0; color: var(--text-muted);">
+              Test, refine, and polish in a fast continuous feedback loop.
+            </p>
+          </div>
+        </div>
+
+        <blockquote style="font-size: 1em;">
+          "Fully give in to the vibes, embrace exponentials, and forget that the code even exists."
+          <cite>— Andrej Karpathy (AI Researcher, OpenAI Co-founder)</cite>
+        </blockquote>
+      </section>
+
+      <!-- SLIDE 3: CONCEPTUAL SHIFT -->
+      <section data-transition="slide">
+        <h2>🔄 The Conceptual Shift</h2>
+        <p style="font-size: 1.1em; margin-bottom: 2rem; color: var(--text-muted);">
+          Moving from technical translation to vision curation.
+        </p>
+
+        <div class="grid-2">
+          <div class="card" style="border-top: 5px solid var(--google-red);">
+            <div class="badge badge-gold" style="margin-bottom: 15px;">Traditional Coding</div>
+            <p style="font-size: 1em; line-height: 1.6; color: var(--r-main-color);">
+              <strong style="color: #1f1f1f;">Human:</strong> Writes individual lines of syntax, manages dependencies manually, debugs compilers, writes boilerplates.
+            </p>
+            <div style="text-align: center; margin-top: 20px; color: var(--google-red); font-size: 2em;">
+              <i class="fa-solid fa-keyboard"></i> <i class="fa-solid fa-arrow-right-long" style="font-size: 0.7em; margin: 0 15px;"></i> <i class="fa-solid fa-bug"></i>
+            </div>
+          </div>
+
+          <div class="card" style="border-top: 5px solid var(--google-blue);">
+            <div class="badge" style="margin-bottom: 15px;">Vibe Coding</div>
+            <p style="font-size: 1em; line-height: 1.6; color: var(--r-main-color);">
+              <strong style="color: #1f1f1f;">Human:</strong> Establishes architecture, acts as Director.
+              <br><strong style="color: var(--google-blue);">AI:</strong> Generates fully functional implementations.
+            </p>
+            <div style="text-align: center; margin-top: 20px; color: var(--google-blue); font-size: 2em;">
+              <i class="fa-solid fa-brain"></i> <i class="fa-solid fa-arrow-right-long" style="font-size: 0.7em; margin: 0 15px;"></i> <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: CORE PRINCIPLES & WORKFLOW -->
+      <section data-transition="slide">
+        <h2>🛠️ Core Principles & Workflow</h2>
+        <p style="font-size: 1.1em; margin-bottom: 1.5rem; color: var(--text-muted);">
+          A conversational and highly interactive dialogue with AI.
+        </p>
+
+        <div class="card" style="border-left: 6px solid var(--google-blue);">
+          <div class="card-header"><span class="badge">Workflow</span> Iterative Loop: See Stuff, Say Stuff, Run Stuff</div>
+          <div class="grid-3" style="margin-top: 15px;">
+            <div style="background: #f1f3f4; padding: 20px; border-radius: 12px; border-left: 4px solid var(--google-red);">
+              <div style="font-weight: 700; color: #1f1f1f; font-size: 1.1em; margin-bottom: 8px;">1. See Stuff</div>
+              <p style="font-size: 0.85em; margin: 0; color: var(--text-muted);">Inspect visual output and application logs closely.</p>
+            </div>
+            <div style="background: #f1f3f4; padding: 20px; border-radius: 12px; border-left: 4px solid var(--google-yellow);">
+              <div style="font-weight: 700; color: #1f1f1f; font-size: 1.1em; margin-bottom: 8px;">2. Say Stuff</div>
+              <p style="font-size: 0.85em; margin: 0; color: var(--text-muted);">Instruct AI on what's broken, what to edit, or add next.</p>
+            </div>
+            <div style="background: #f1f3f4; padding: 20px; border-radius: 12px; border-left: 4px solid var(--google-green);">
+              <div style="font-weight: 700; color: #1f1f1f; font-size: 1.1em; margin-bottom: 8px;">3. Run Stuff</div>
+              <p style="font-size: 0.85em; margin: 0; color: var(--text-muted);">Execute the newly updated and compiled files instantly.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 20px; background: #e8f0fe; border-color: rgba(26,115,232,0.2);">
+          <div style="font-size: 1.05em; line-height: 1.5; color: #1a73e8;">
+            <i class="fa-solid fa-user-tie" style="margin-right: 10px; font-size: 1.2em;"></i>
+            <strong>The "Tech Lead" Mindset:</strong> You act as the <strong>Tech Lead / Architect</strong>. The AI behaves as a highly efficient but extremely literal <strong>Junior Engineer</strong>.
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: THE VIBE CODING ECOSYSTEM -->
+      <section data-transition="slide">
+        <h2>🧰 The Vibe Coding Ecosystem</h2>
+        <p style="font-size: 1.1em; margin-bottom: 1.5rem; color: var(--text-muted);">
+          Context-Aware Orchestration in 2026.
+        </p>
+
+        <div class="grid-2">
+          <div class="card" style="border-left: 5px solid var(--google-blue);">
+            <div style="font-weight: 700; font-size: 1.15em; color: var(--google-blue);"><i class="fa-solid fa-code"></i> Agentic IDEs</div>
+            <p style="font-size: 0.9em; margin: 8px 0 0; color: var(--text-muted);">Multi-file codebase indexing and autonomous local refactorings. (e.g., Cursor, Windsurf)</p>
+          </div>
+          <div class="card" style="border-left: 5px solid var(--google-red);">
+            <div style="font-weight: 700; font-size: 1.15em; color: var(--google-red);"><i class="fa-solid fa-shapes"></i> Frontend Generators</div>
+            <p style="font-size: 0.9em; margin: 8px 0 0; color: var(--text-muted);">Instant prototyping of high-fidelity UI and structure. (e.g., v0.dev, Bolt.new, Replit Agent)</p>
+          </div>
+          <div class="card" style="border-left: 5px solid var(--google-yellow);">
+            <div style="font-weight: 700; font-size: 1.15em; color: #b06000;"><i class="fa-solid fa-brain"></i> Orchestrators</div>
+            <p style="font-size: 0.9em; margin: 8px 0 0; color: var(--text-muted);">System planning, intent state keeping, compiling prompt specs. (e.g., Agy, Genkit)</p>
+          </div>
+          <div class="card" style="border-left: 5px solid var(--google-green);">
+            <div style="font-weight: 700; font-size: 1.15em; color: var(--google-green);"><i class="fa-solid fa-cloud"></i> Autonomous Cloud</div>
+            <p style="font-size: 0.9em; margin: 8px 0 0; color: var(--text-muted);">Zero-shot backend provisioners and hostings. (e.g., Firebase App Hosting, Vercel)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: PROS & CONS -->
+      <section data-transition="slide">
+        <h2>⚖️ Pros & Cons of "Vibing"</h2>
+        <p style="font-size: 1.1em; margin-bottom: 1.5rem; color: var(--text-muted);">
+          Evaluating velocity against codebase stability.
+        </p>
+
+        <div class="grid-2">
+          <div class="card" style="border-color: rgba(19, 115, 51, 0.25); background: #f6fbf7;">
+            <div style="color: var(--google-green); font-weight: 700; font-size: 1.2em; margin-bottom: 15px;">
+              <i class="fa-solid fa-circle-plus"></i> Advantages
+            </div>
+            <ul class="custom-list">
+              <li><strong>Extreme Velocity:</strong> Move from concept to working prototype in hours instead of weeks.</li>
+              <li><strong>Democratization:</strong> Enables anyone with ideas to build functional systems.</li>
+              <li><strong>Low Cognitive Load:</strong> Offloads boilerplate configurations.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="border-color: rgba(234, 67, 53, 0.25); background: #fdf5f4;">
+            <div style="color: var(--google-red); font-weight: 700; font-size: 1.2em; margin-bottom: 15px;">
+              <i class="fa-solid fa-triangle-exclamation"></i> Risks & Challenges
+            </div>
+            <ul class="custom-list">
+              <li class="warn"><strong>Vibe Debt:</strong> Unchecked generated code accumulates technical debt.</li>
+              <li class="warn"><strong>Security Blindspots:</strong> Insecure packages or leaked secrets.</li>
+              <li class="warn"><strong>Skill Atrophy:</strong> Forgetting syntax and core structural design principles.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: BEST PRACTICES -->
+      <section data-transition="slide">
+        <h2>📚 Best Practices for Engineering Quality</h2>
+        <p style="font-size: 1.1em; margin-bottom: 1.5rem; color: var(--text-muted);">
+          Transitioning from a hobbyist to a production-grade developer.
+        </p>
+
+        <div class="grid-2" style="font-size: 1em;">
+          <div class="card">
+            <div style="font-weight: 700; color: var(--google-blue); font-size: 1.1em; margin-bottom: 8px;">
+              <i class="fa-solid fa-compass"></i> 1. Master Context
+            </div>
+            <p style="font-size: 0.85em; color: var(--text-muted); margin: 0; line-height: 1.5;">
+              Ground the AI with explicit files, schemas, and API rules. Avoid open-ended guessing or broad scopes.
+            </p>
+          </div>
+          <div class="card">
+            <div style="font-weight: 700; color: var(--google-red); font-size: 1.1em; margin-bottom: 8px;">
+              <i class="fa-solid fa-clipboard-check"></i> 2. Verify Immediately
+            </div>
+            <p style="font-size: 0.85em; color: var(--text-muted); margin: 0; line-height: 1.5;">
+              Never merge blind. Perform detailed diff reviews and use AI to generate robust verification test suites.
+            </p>
+          </div>
+          <div class="card">
+            <div style="font-weight: 700; color: #b06000; font-size: 1.1em; margin-bottom: 8px;">
+              <i class="fa-solid fa-lock"></i> 3. Secure Environments
+            </div>
+            <p style="font-size: 0.85em; color: var(--text-muted); margin: 0; line-height: 1.5;">
+              Enforce strict usage of .env files. Keep all secrets and sensitive user data out of prompts.
+            </p>
+          </div>
+          <div class="card">
+            <div style="font-weight: 700; color: var(--google-green); font-size: 1.1em; margin-bottom: 8px;">
+              <i class="fa-solid fa-palette"></i> 4. Inject Premium "Taste"
+            </div>
+            <p style="font-size: 0.85em; color: var(--text-muted); margin: 0; line-height: 1.5;">
+              AI handles the 80% logic. Your eye for design, typography, spacing, and micro-animations creates the final premium 20%.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: VIBE VS LOW CODE / NO CODE -->
+      <section data-transition="slide">
+        <h2>⚖️ Vibe Coding vs. Low-Code / No-Code</h2>
+        <p style="font-size: 1.1em; margin-bottom: 1rem; color: var(--text-muted);">
+          A fundamental split in software democratisation philosophies.
+        </p>
+
+        <table class="custom-table" style="font-size: 0.95em;">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Vibe Coding</th>
+              <th>Low-Code / No-Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Primary Interface</strong></td>
+              <td>Natural Language prompts (Conversational)</td>
+              <td>Visual dragging (Canvas / Menus)</td>
+            </tr>
+            <tr>
+              <td><strong>Output Format</strong></td>
+              <td><strong style="color: var(--google-blue);">Real Source Code</strong> (React, Flutter, etc.)</td>
+              <td>Proprietary metadata (Locked to platform)</td>
+            </tr>
+            <tr>
+              <td><strong>System Flexibility</strong></td>
+              <td><strong>Infinite.</strong> Anything source code can build.</td>
+              <td>Limited to prebuilt widgets and triggers.</td>
+            </tr>
+            <tr>
+              <td><strong>Vendor Lock-in</strong></td>
+              <td><strong>Low.</strong> Host anywhere, maintain yourself.</td>
+              <td><strong>High.</strong> Hard to migrate outside the provider.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- SLIDE 9: TASTE IS THE NEW COMPILER -->
+      <section data-transition="slide" style="text-align: center;">
+        <h2 style="text-align: center; font-size: 2.2em; margin-bottom: 25px;">🎨 "Taste" is the New Compiler</h2>
+        
+        <div style="max-width: 850px; margin: 0 auto;">
+          <blockquote style="font-size: 1.2em; line-height: 1.6; text-align: left; background: rgba(26,115,232,0.03); box-shadow: var(--shadow-md);">
+            "AI is stellar at the first 80-90% of a prototype. However, human taste is required for the final 10%—the precise spacing, the brand identity, and fluid transitions."
+          </blockquote>
+          
+          <div class="card" style="margin-top: 35px; display: inline-block; padding: 1.8rem 4rem; border-color: rgba(26,115,232,0.2);">
+            <div style="font-size: 1.5em; font-weight: 800; letter-spacing: 0.05em; color: var(--google-blue);">
+              The Creator Shift
+            </div>
+            <p style="font-size: 1em; color: var(--text-muted); margin: 12px 0 0; line-height: 1.5;">
+              From <strong>Implementation Syntax</strong> (How to code) <br>to <strong style="color: var(--google-green);">Creative Curation</strong> (What feels right)
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: FUTURE OF SOFTWARE MARKET -->
+      <section data-transition="slide">
+        <h2>📈 The Future of the Software Job Market</h2>
+        <p style="font-size: 1.1em; margin-bottom: 1.5rem; color: var(--text-muted);">
+          Seniority structures are being completely reorganized around AI operations.
+        </p>
+
+        <div class="grid-2">
+          <div class="card" style="border-left: 6px solid var(--google-red);">
+            <div style="font-weight: 700; font-size: 1.15em; color: var(--google-red); margin-bottom: 10px;">
+              The "Junior Squeeze" <i class="fa-solid fa-compress"></i>
+            </div>
+            <p style="font-size: 0.9em; line-height: 1.5; color: var(--text-muted); margin: 0;">
+              Traditional roles focused on writing boilers, boilerplate endpoints, and minor unit tests are being automated instantly. Entry barrier is higher.
+            </p>
+          </div>
+
+          <div class="card" style="border-left: 6px solid var(--google-green);">
+            <div style="font-weight: 700; font-size: 1.15em; color: var(--google-green); margin-bottom: 10px;">
+              The "Seniority Premium" <i class="fa-solid fa-crown"></i>
+            </div>
+            <p style="font-size: 0.9em; line-height: 1.5; color: var(--text-muted); margin: 0;">
+              Value shifts from syntactical recall to <strong>Architectural Judgment</strong>, scalability, security oversight, and product-design curation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: SPEC-DRIVEN DEVELOPMENT -->
+      <section data-transition="convex">
+        <h2>🛠️ Spec-Driven Development (SDD)</h2>
+        <p style="font-size: 1.1em; margin-bottom: 1.5rem; color: var(--text-muted);">
+          Beyond the Vibe: Facing the <strong>"Three-Month Wall"</strong>.
+        </p>
+
+        <div class="card" style="background: #fdf5f4; border-color: rgba(234,67,53,0.2);">
+          <div style="font-weight: 700; font-size: 1.15em; color: var(--google-red); margin-bottom: 10px;">
+            ⚠️ The 3-Month Wall
+          </div>
+          <p style="font-size: 0.9em; line-height: 1.6; color: var(--text-muted); margin: 0;">
+            As projects scale, simple conversational prompts break down. Loose requirements lead to regression loops, conflicting files, and chaotic "vibe debt."
+          </p>
+        </div>
+
+        <p style="font-size: 1.05em; margin: 20px 0 8px; font-weight: 600; color: #1f1f1f;">The Professional Evolution:</p>
+        <div style="font-size: 0.95em; color: var(--text-muted); line-height: 1.5;">
+          Shifting from pure casual chat to managing <strong style="color: var(--google-blue);">structured specifications</strong>. SDD treats AI as a highly literal-minded compiler that requires unambiguous blueprints.
+        </div>
+      </section>
+
+      <!-- SLIDE 12: THE 4 PILLARS OF SDD -->
+      <section data-transition="slide">
+        <h2>📋 The SDD Lifecycle: 4 Pillars</h2>
+        <p style="font-size: 1.1em; margin-bottom: 1.5rem; color: var(--text-muted);">
+          A structured pipeline to guarantee system stability and feature delivery.
+        </p>
+
+        <div class="grid-4" style="font-size: 0.9em;">
+          <div class="card" style="padding: 15px; border-top: 4px solid var(--google-blue);">
+            <div style="font-weight: 700; color: var(--google-blue); margin-bottom: 8px;">1. Specify</div>
+            <p style="font-size: 0.85em; margin: 0; color: var(--text-muted); line-height: 1.4;">Write requirements. Create a formal Markdown specification before any code is generated.</p>
+          </div>
+          <div class="card" style="padding: 15px; border-top: 4px solid var(--google-red);">
+            <div style="font-weight: 700; color: var(--google-red); margin-bottom: 8px;">2. Plan</div>
+            <p style="font-size: 0.85em; margin: 0; color: var(--text-muted); line-height: 1.4;">Define technical constraints, API standards, and patterns. Map out changes beforehand.</p>
+          </div>
+          <div class="card" style="padding: 15px; border-top: 4px solid var(--google-yellow);">
+            <div style="font-weight: 700; color: #b06000; margin-bottom: 8px;">3. Tasks</div>
+            <p style="font-size: 0.85em; margin: 0; color: var(--text-muted); line-height: 1.4;">Taskify the plan into incremental, atomic, easily reviewable lists of actions.</p>
+          </div>
+          <div class="card" style="padding: 15px; border-top: 4px solid var(--google-green);">
+            <div style="font-weight: 700; color: var(--google-green); margin-bottom: 8px;">4. Implement</div>
+            <p style="font-size: 0.85em; margin: 0; color: var(--text-muted); line-height: 1.4;">AI executes independent tasks one by one accompanied by automated tests.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 13: SDD MATURITY LEVELS -->
+      <section data-transition="slide">
+        <h2>📈 Three Levels of SDD Maturity</h2>
+        <p style="font-size: 1.1em; margin-bottom: 1.5rem; color: var(--text-muted);">
+          How deeply teams anchor their designs in specifications.
+        </p>
+
+        <div class="grid-3" style="font-size: 0.9em;">
+          <div class="card">
+            <div class="badge badge-gold" style="margin-bottom: 12px;">Level 1</div>
+            <div style="font-weight: 700; color: #1f1f1f; margin-bottom: 8px; font-size: 1.1em;">Spec-First</div>
+            <p style="font-size: 0.8em; margin: 0; color: var(--text-muted); line-height: 1.5;">You author a spec to launch a complex feature. Once deployed, the spec is archived.</p>
+          </div>
+          <div class="card" style="border-color: rgba(26,115,232,0.4); background: #f8fafd;">
+            <div class="badge" style="margin-bottom: 12px;">Level 2</div>
+            <div style="font-weight: 700; color: var(--google-blue); margin-bottom: 8px; font-size: 1.1em;">Spec-Anchored</div>
+            <p style="font-size: 0.8em; margin: 0; color: var(--text-muted); line-height: 1.5;">Specs are version-controlled. All modifications must start by updating specs first to block architectural drift.</p>
+          </div>
+          <div class="card" style="border-color: rgba(19,115,51,0.4); background: #f6fbf7; box-shadow: var(--shadow-premium);">
+            <div class="badge" style="margin-bottom: 12px; background: rgba(19,115,51,0.1); color: var(--google-green); border-color: rgba(19,115,51,0.2);">Level 3</div>
+            <div style="font-weight: 700; color: var(--google-green); margin-bottom: 8px; font-size: 1.1em;">Spec-as-Source</div>
+            <p style="font-size: 0.8em; margin: 0; color: var(--text-muted); line-height: 1.5;">Humans ONLY write and modify the specifications. AI agents fully "compile" them into code automatically.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 14: THE AI-NATIVE STACK (2026) -->
+      <section data-transition="slide">
+        <h2>🛠️ The AI-Native Developer Stack</h2>
+        <p style="font-size: 1.1em; margin-bottom: 1rem; color: var(--text-muted);">
+          A multi-layered blueprint of modern AI development (2026 Edition).
+        </p>
+
+        <table class="custom-table" style="font-size: 0.95em;">
+          <thead>
+            <tr>
+              <th>Layer</th>
+              <th>Component</th>
+              <th>2026 Standard / Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Orchestration</strong></td>
+              <td><strong>The Brain</strong></td>
+              <td>Agents (e.g. Agy) that coordinate files, manage active state & logic paths.</td>
+            </tr>
+            <tr>
+              <td><strong>Execution</strong></td>
+              <td><strong>The Hands</strong></td>
+              <td>Specialized sub-agents that solve atomic issues (code base search, setup).</td>
+            </tr>
+            <tr>
+              <td><strong>Persistence</strong></td>
+              <td><strong>The Memory</strong></td>
+              <td>Context-anchored specs kept in markdown to act as stable long-term memory.</td>
+            </tr>
+            <tr>
+              <td><strong>Verification</strong></td>
+              <td><strong>The Auditor</strong></td>
+              <td>Linter and visual diff check algorithms run instantly on every output.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- SLIDE 15: FROM CHATTING TO ORCHESTRATION -->
+      <section data-transition="slide">
+        <h2>🤖 From 'Chatting' to 'Orchestration'</h2>
+        <p style="font-size: 1.1em; margin-bottom: 1.5rem; color: var(--text-muted);">
+          Pasting files into conversational windows is deprecated.
+        </p>
+
+        <div class="card" style="border-left: 6px solid var(--google-blue);">
+          <div style="font-weight: 700; color: var(--google-blue); font-size: 1.15em; margin-bottom: 8px;">
+            <i class="fa-solid fa-database"></i> Context-First Indexing
+          </div>
+          <p style="font-size: 0.9em; color: var(--text-muted); margin: 0 0 15px; line-height: 1.5;">
+            Modern tools index entire workspaces, internal documentation, schemas, and credentials safely, avoiding hallucinations.
+          </p>
+        </div>
+
+        <div class="card" style="border-left: 6px solid var(--google-green);">
+          <div style="font-weight: 700; color: var(--google-green); font-size: 1.15em; margin-bottom: 8px;">
+            <i class="fa-solid fa-network-wired"></i> Agent-in-the-Loop Delegation
+          </div>
+          <p style="font-size: 0.9em; color: var(--text-muted); margin: 0; line-height: 1.5;">
+            Developers coordinate. Instead of raw typing, we prompt specialized sub-agents: <br>
+            <code style="font-size: 1em; color: var(--google-blue); background: #f1f3f4; padding: 2px 8px; border-radius: 6px;">"firebase-expert, configure security rules matching vibetree_prd.md"</code>.
+          </p>
+        </div>
+      </section>
+
+      <!-- SLIDE 16: CONCLUSION -->
+      <section data-transition="zoom" style="text-align: center;">
+        <div class="google-dots" style="margin-bottom: 30px;">
+          <span class="dot-blue"></span>
+          <span class="dot-red"></span>
+          <span class="dot-yellow"></span>
+          <span class="dot-green"></span>
+        </div>
+        <h2 style="text-align: center; font-size: 2.2em;">Engineering the Future</h2>
+        
+        <div style="max-width: 750px; margin: 35px auto 0;">
+          <div class="card" style="border-color: rgba(26,115,232,0.3); background: #f8fafd; padding: 2rem; box-shadow: var(--shadow-premium);">
+            <p style="font-size: 1.3em; font-weight: 700; line-height: 1.5; margin: 0; color: #1f1f1f;">
+              "Vibe coding is for finding the solution; <br>
+              <span style="color: var(--google-blue);">SDD is for building the product.</span>"
+            </p>
+          </div>
+          <p style="font-size: 0.95em; color: var(--text-muted); margin-top: 30px; line-height: 1.6;">
+            The best developers vibe creatively to prototype fast, while applying Spec-Driven Development to deploy secure, scalable, and premium systems.
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js JS Core and plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/markdown/markdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
+  
+  <script>
+    // Initialize Reveal.js with modern transitions and custom settings
+    Reveal.initialize({
+      hash: true,
+      center: true,
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+      transitionSpeed: 'normal',
+      backgroundTransition: 'fade',
+      
+      // Auto-animate configurations
+      autoAnimateEasing: 'ease',
+      autoAnimateDuration: 1.0,
+      
+      // Navigation options
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      keyboard: true,
+      touch: true,
+      help: true,
+      
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+    });
+  </script>
+</body>
+</html>
